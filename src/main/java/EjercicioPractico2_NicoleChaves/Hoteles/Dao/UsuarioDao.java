@@ -11,6 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UsuarioDao extends JpaRepository<Usuario, Long> {
 
-    public Object findByUsername(String username);
-    // Métodos para la gestión de usuarios, como buscar por username o email, pueden ser agregados aquí
+    public Usuario findByUsername(String username);
 }

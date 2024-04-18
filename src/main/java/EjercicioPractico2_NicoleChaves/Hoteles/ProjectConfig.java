@@ -5,15 +5,11 @@
 package EjercicioPractico2_NicoleChaves.Hoteles;
 
 import java.util.Locale;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -23,7 +19,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
-public class Config implements WebMvcConfigurer {
+public class ProjectConfig implements WebMvcConfigurer {
     
     // Configuración de internacionalización
     @Bean
@@ -82,13 +78,6 @@ public class Config implements WebMvcConfigurer {
             .logout((logout) -> logout.logoutSuccessUrl("/login"));
         return http.build();
     }
-
     // Configuración global de autenticación con codificador de contraseñas
-    @Autowired
-    private UserDetailsService userDetailsService;
 
-    @Autowired
-    public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception {
-        build.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
-}

@@ -1,7 +1,7 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+ 
 package EjercicioPractico2_NicoleChaves.Hoteles.Controller;
 
 import EjercicioPractico2_NicoleChaves.Hoteles.Service.AdminService;
@@ -38,3 +38,4 @@ public class AdminController {
         return "redirect:/admin/employees";
     }
 }
+*/
